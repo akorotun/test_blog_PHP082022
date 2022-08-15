@@ -2,12 +2,11 @@
 
 class App
 {
-
     protected $controller = 'Home';
     protected $method = 'index';
     protected $params = [];
 
-
+    //из url получаем названия контроллера, модели и доп параметры
     public function __construct()
     {
         $url = $this->parseUrl();

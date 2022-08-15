@@ -14,18 +14,21 @@ body {
     background: #fff;
 }
 
+a {
+    text-decoration: none;
+    color: #714732;
+}
+
 img {
     max-width: 100%;/* все картинки будут по ширине 100% родительского элемента и не вылазят за пределы экрана */
 }
 
-/* container - основной блок */
+
 .container {
     padding-left: 15%;
     padding-right: 15%;
     width: 70%;
 }
-
-
 
 /* адаптивность сайта */
 @media (max-width: 900px) {
@@ -44,7 +47,6 @@ header > .top-menu {
     justify-content: center;
     /*background: #FFE4B5;*/
     background: #E7F3D9;
-
     text-transform: uppercase;
 }
 
@@ -140,11 +142,6 @@ header > .middle {
     line-height: 20px;
 }
 
-.content > .sticky {
-    position: sticky;
-    top: 0;
-}
-
 .comments {
-    width: 90%;
+    margin-left: 5%;
 }

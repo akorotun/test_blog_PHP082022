@@ -4,14 +4,21 @@ class Home extends Controller
 {
     public function index()
     {
-        $posts = $this->model('PostsModel');// создали объект на основе модели PostsModel
-        //в Controller уже определили массив $data = [];
+        $postsModel = $this->model('PostsModel');
+//        $commentsModel = $this->model('CommentsModel');// удалить
+        $ratingsModel = $this->model('RatingsModel');
 
-        $comments = $this->model('CommentModel');// - Cannot declare class DbModel, because the name is already in use
-        //надо как-то переделать подключение к базе
+        //получили посты
+        $posts = $postsModel->getPostsFilledWithRelations();
+
+        //количество всех постов, негативных и позитивных
+        $countPosts = $postsModel->countPosts();
+        $countRatings = $ratingsModel->ratingCounter();// количество негативных и позитивных постов
+
         $data = [
-            'posts' => $posts->getPosts(),
-            'comments' => $comments->getComments()
+            'posts' => $posts,
+            'countPosts' => $countPosts,
+            'countRatings' => $countRatings,
         ];
         $this->view('home/index', $data);
     }

@@ -1,7 +1,5 @@
 <?php
 
-
-
 class Singleton
 {
 
@@ -22,8 +20,6 @@ class Singleton
         if (!isset(self::$instances[$cls])) {
             self::$instances[$cls] = new static();
         }
-
         return self::$instances[$cls];
     }
-
 }

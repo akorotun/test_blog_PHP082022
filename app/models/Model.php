@@ -20,8 +20,7 @@ class Model
 
     protected static function execute(string $sql, array $params = [])
     {
-        $query = self::prepare($sql); // Подготовили sql запрос
+        $query = self::prepare($sql);
         $query->execute($params);
     }
-
 }
